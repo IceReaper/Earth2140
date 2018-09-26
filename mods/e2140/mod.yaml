@@ -59,6 +59,8 @@ Rules:
 	ra|rules/aircraft.yaml
 	ra|rules/ships.yaml
 	ra|rules/fakes.yaml
+	e2140|rules/palettes.yaml
+	e2140|rules/dummy.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
@@ -68,6 +70,7 @@ Sequences:
 	ra|sequences/aircraft.yaml
 	ra|sequences/misc.yaml
 	ra|sequences/decorations.yaml
+	e2140|sequences/dummy.yaml
 
 TileSets:
 	ra|tilesets/snow.yaml
@@ -210,7 +213,7 @@ SoundFormats: Aud, Wav
 
 SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS, MixSprite
 
-SpriteSequenceFormat: TilesetSpecificSpriteSequence
+SpriteSequenceFormat: Earth2140SpriteSequence
 	TilesetExtensions:
 		TEMPERAT: .tem
 		SNOW: .sno

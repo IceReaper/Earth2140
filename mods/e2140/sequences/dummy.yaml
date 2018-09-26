@@ -1,0 +1,16 @@
+dummy:
+	Inherits: 2tnk
+	idle: SPRU0.MIX
+		Frames: 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241
+		Start: 0
+		Facings: -16
+		FlipFacings: true
+		UseClassicFacingFudge: false
+		AddExtension: false
+	turret: SPRU0.MIX
+		Frames: 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249, 1250
+		Start: 0
+		Facings: -16
+		FlipFacings: true
+		UseClassicFacingFudge: false
+		AddExtension: false

@@ -50,23 +50,28 @@ namespace OpenRA.Mods.E2140.SpriteLoaders
                         dataOffsets[i] = stream.ReadUInt16();
 
                     var patterns = stream.ReadBytes(numPatterns);
-                    var data = new SegmentStream(stream, compressedImageDataOffset, dataSize);
+                    var data = new SegmentStream(stream, compressedImageDataOffset + 6, dataSize);
 
                     var writePosition = 0;
                     for (var i = 0; i < Size.Height; i++)
                     {
                         data.Position = dataOffsets[i];
 
-                        for (var j = scanlines[i]; j < scanlines[i + 1]; j += 2)
+                        if (scanlines[i] == scanlines[i + 1])
+                            writePosition += Size.Width;
+                        else
                         {
-                            writePosition += patterns[j];
-                            var pixels = patterns[j + 1];
-                            Array.Copy(data.ReadBytes(pixels), 0, Data, writePosition, pixels);
-                            writePosition += pixels;
-                        }
+                            for (var j = scanlines[i]; j < scanlines[i + 1]; j += 2)
+                            {
+                                writePosition += patterns[j];
+                                var pixels = patterns[j + 1];
+                                Array.Copy(data.ReadBytes(pixels), 0, Data, writePosition, pixels);
+                                writePosition += pixels;
+                            }
 
-                        if (writePosition % Size.Width != 0)
-                            writePosition += Size.Width - writePosition % Size.Width;
+                            if (writePosition % Size.Width != 0)
+                                writePosition += Size.Width - writePosition % Size.Width;
+                        }
                     }
 
                     break;

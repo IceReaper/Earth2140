@@ -1,0 +1,9 @@
+dummy:
+	Inherits: 2TNK
+	RenderSprites:
+		PlayerPalette: palette72player
+	-WithMuzzleOverlay:
+	-WithSpriteTurret:
+	WithMuzzlePaletteSpriteTurret:
+	WithMovePalette:
+		Palette: palette72playerMovement

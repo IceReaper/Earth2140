@@ -39,7 +39,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileSystem\WdLoader.cs" />
+    <Compile Include="Graphics\Earth2140SpriteSequence.cs" />
     <Compile Include="SpriteLoaders\MixSpriteLoader.cs" />
+    <Compile Include="Traits\PaletteEffects\ReversedRotationPaletteEffect.cs" />
+    <Compile Include="Traits\Render\WithMovePalette.cs" />
+    <Compile Include="Traits\Render\WithMuzzlePaletteSpriteTurret.cs" />
+    <Compile Include="Traits\World\MuzzlePalette.cs" />
+    <Compile Include="Traits\World\OverlayPlayerColorPalette.cs" />
+    <Compile Include="Traits\World\PaletteFromMix.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
